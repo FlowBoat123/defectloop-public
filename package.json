@@ -1,0 +1,26 @@
+{
+  "name": "defect-intelligence-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DefectLoop public demo for validating defect knowledge and compiling a deterministic graph",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "demo": "npm run knowledge:validate && npm run knowledge:build",
+    "knowledge:validate": "tsx packages/knowledge-validator/src/cli.ts validate",
+    "knowledge:build": "tsx packages/knowledge-validator/src/cli.ts build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/knowledge.test.ts"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

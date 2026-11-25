@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: BUG:demo:101
+status: CONFIRMED
+severity: P2
+owner: demo-team
+source:
+  projectKey: demo
+  issueIid: 101
+  issueUrl: https://issues.example.org/demo/101
+classification:
+  defectFamily: DF-STALE_COUNT
+analysis:
+  symptom: The active task count does not change after a task is archived.
+  trigger: Archive an active task and return to the dashboard.
+  directCause: The archive handler refreshes the task list and leaves the summary cache intact.
+  enablingCondition: The list and dashboard use separate cache keys.
+  escapeReason: The test checks list membership and omits the summary count.
+  violatedInvariants:
+    - INV-DEMO-001
+impact:
+  affectedCodeUnits:
+    - demo:ts:FUNCTION:src/tasks/archive-task.ts#archiveTask
+  siblingScan:
+    status: COMPLETED
+    method: Inspect other mutations that modify the active task collection.
+    candidates: []
+resolution:
+  fixMergeRequest: MR:demo:7:0123456789abcdef0123456789abcdef01234567
+  regressionGuardrails:
+    - GRD-DEMO-001
+  guardrailException: null
+sourceRefs:
+  - kind: HUMAN_CONFIRMATION
+    uri: https://issues.example.org/demo/101#review
+    commitSha: null
+    contentHash: null

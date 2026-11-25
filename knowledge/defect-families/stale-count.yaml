@@ -1,0 +1,8 @@
+schemaVersion: 1
+id: DF-STALE_COUNT
+name: Stale aggregate count
+description: A count displayed in the interface stays stale after a successful update.
+mechanism: A mutation changes the collection while the summary view continues to read cached data.
+status: ACTIVE
+owner: demo-team
+sourceRefs: []

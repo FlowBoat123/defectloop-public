@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: INV-DEMO-001
+title: Refresh the active task count after archiving
+statement: The active task count equals the number of non-archived tasks after a successful archive operation.
+rationale: The summary should show the same state as the task list.
+severity: P2
+status: ACTIVE
+owner: demo-team
+appliesTo:
+  projects:
+    - demo
+  pathGlobs:
+    - src/tasks/**
+  codeUnitKinds:
+    - FUNCTION
+sourceRefs: []
+supersedes: []

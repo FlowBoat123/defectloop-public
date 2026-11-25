@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: GRD-DEMO-001
+name: Refresh the count after archiving a task
+type: REGRESSION_TEST
+status: ACTIVE
+owner: demo-team
+locator:
+  project: demo
+  path: src/tasks/archive-task.spec.ts
+  ruleId: null
+enforces:
+  - INV-DEMO-001
+sourceRefs: []
